@@ -3,7 +3,7 @@ package Air_conditioner;
 public class AirConditioner {
 
     private boolean turnOn;
-    private int temperature ;
+    private int temperature = 16;
 
     public boolean turnOn() {
         return true;
@@ -11,7 +11,7 @@ public class AirConditioner {
 
     public boolean turnOff() {
         if(turnOn) return false;
-        return false;
+        return true;
     }
 
     public void increaseTemperature() {

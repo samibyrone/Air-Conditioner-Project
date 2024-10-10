@@ -9,13 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AirConditionerControlTest {
 
     @Test
-    public void newAirConditioner_thatCanTurnOnTest() {
-        AirConditioner airConditioner = new AirConditioner();
-        airConditioner.turnOn();
-        assertTrue(airConditioner.turnOn());
-    }
-
-    @Test
     public void newAirConditioner_thatCanTurnOffTest() {
         AirConditioner airConditioner = new AirConditioner();
         airConditioner.turnOn();
@@ -24,11 +17,19 @@ public class AirConditionerControlTest {
     }
 
     @Test
+    public void newAirConditioner_thatCanTurnOnTest() {
+        AirConditioner airConditioner = new AirConditioner();
+        airConditioner.turnOff();
+        airConditioner.turnOn();
+        assertTrue(airConditioner.turnOn());
+    }
+
+    @Test
     public void newAirConditioner_canTurnOn_andCanIncreaseTemperatureTest() {
         AirConditioner airConditioner= new AirConditioner();
         airConditioner.turnOn();
         airConditioner.increaseTemperature();
-        assertTrue(airConditioner.turnOn(), "Temperature should be set correctly");
+        assertEquals(17, airConditioner.getCurrentTemperature(), "Temperature should be set correctly");
     }
 
     @Test
@@ -36,7 +37,7 @@ public class AirConditionerControlTest {
         AirConditioner airConditioner= new AirConditioner();
         airConditioner.turnOn();
         airConditioner.decreaseTemperature();
-        assertTrue(airConditioner.turnOn(), "Temperature should be set correctly");
+        assertTrue(airConditioner.getCurrentTemperature() == 15, "Temperature should be set correctly");
     }
 
     @Test
