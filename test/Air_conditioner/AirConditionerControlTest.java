@@ -12,7 +12,7 @@ public class AirConditionerControlTest {
     public void newAirConditioner_thatCanTurnOnTest() {
         AirConditioner airConditioner = new AirConditioner();
         airConditioner.turnOn();
-        assertEquals(true, airConditioner.turnOn());
+        assertTrue(airConditioner.turnOn());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class AirConditionerControlTest {
         AirConditioner airConditioner = new AirConditioner();
         airConditioner.turnOn();
         airConditioner.turnOff();
-        assertEquals(true, airConditioner.turnOff());
+        assertTrue(airConditioner.turnOff());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class AirConditionerControlTest {
         AirConditioner airConditioner= new AirConditioner();
         airConditioner.turnOn();
         airConditioner.increaseTemperature();
-        assertEquals(true, airConditioner.turnOn(), "Temperature should be set correctly");
+        assertTrue(airConditioner.turnOn(), "Temperature should be set correctly");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class AirConditionerControlTest {
         AirConditioner airConditioner= new AirConditioner();
         airConditioner.turnOn();
         airConditioner.decreaseTemperature();
-        assertEquals(true, airConditioner.turnOn(), "Temperature should be set correctly");
+        assertTrue(airConditioner.turnOn(), "Temperature should be set correctly");
     }
 
     @Test
